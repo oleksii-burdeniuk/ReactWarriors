@@ -1,5 +1,6 @@
 import React from "react";
 import '../App.css';
+import cn from 'classnames'
 let imagesBaseUrl = 'https://image.tmdb.org/t/p/w500/'
 class MovieItem extends React.Component {
     constructor() {
@@ -40,7 +41,7 @@ class MovieItem extends React.Component {
                     <button type='button' onClick={this.taggleOverviev}>
                         {this.state.show ? "hide" : "show"}
                     </button>
-                    <button className={this.state.like ? 'like' : ''} type='button' onClick={this.handleLike} >Like</button>
+                    <button className={cn({ 'like': this.state.like })} type='button' onClick={this.handleLike} >Like</button>
                     <button type='button' onClick={
                         () => { this.props.removeMovie(this.props.movie) }
                     } >delete movie</button>
@@ -58,7 +59,7 @@ class MovieItem extends React.Component {
                         } >will watch</button>}
                 </div>
                 {this.state.show ? <p>{overviev}</p> : ""}
-            </div>
+            </div >
         )
     }
 }
