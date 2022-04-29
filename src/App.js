@@ -3,6 +3,8 @@ import { API_KEY, API_URL } from './api/api';
 import './App.css';
 import MovieItem from './components/movieItem';
 import MovieTabs from './components/movieTabs';
+import Paginator from './components/paginator';
+import cn from 'classnames'
 
 
 
@@ -13,7 +15,9 @@ class App extends React.Component {
     this.state = {
       movie: [],
       moviesWillWatch: [],
-      sort_by: 'popularity.desc'
+      sort_by: 'popularity.desc',
+      page: 1,
+      adult: false,
     }
   }
   removeMovie = (movie) => {
@@ -25,7 +29,7 @@ class App extends React.Component {
     })
   }
   getMovies = () => {
-    fetch(`${API_URL}/discover/movie?api_key=${API_KEY}&sort_by=${this.state.sort_by}`).then((response) => {
+    fetch(`${API_URL}/discover/movie?api_key=${API_KEY}&sort_by=${this.state.sort_by}&page=${this.state.page}&include_adult=${this.state.adult}`).then((response) => {
       return response.json()
     }).then((data) => {
       this.setState({
@@ -33,11 +37,12 @@ class App extends React.Component {
       })
     })
   }
+
   componentDidMount() {
     this.getMovies()
   }
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.sort_by !== prevState.sort_by) {
+    if (this.state.sort_by !== prevState.sort_by || this.state.page !== prevState.page) {
       this.getMovies()
     }
   }
@@ -61,10 +66,19 @@ class App extends React.Component {
 
     })
   }
+  switchPage = (value) => {
+    this.setState({
+      page: value,
+    })
+  }
+
   render() {
-    return (
+    return (<div className='headContainer'>
       <div className='container'>
-        <MovieTabs sort_by={this.state.sort_by} updateSortBy={this.updateSortBy} />
+        <div> <Paginator switchPage={this.switchPage} page={this.state.page} /></div>
+        <div>
+          <MovieTabs sort_by={this.state.sort_by} updateSortBy={this.updateSortBy} />
+        </div>
         <div className='movieContainer'>
           {this.state.movie.map((movie) => {
             return (
@@ -73,11 +87,12 @@ class App extends React.Component {
             )
           })}
         </div>
-        <div >
-          <p> will watch: {this.state.moviesWillWatch.length}</p>
-        </div>
-
+        <div> <Paginator switchPage={this.switchPage} page={this.state.page} /></div>
       </div>
+      <div className='willWatchContainer' >
+        <p> will watch: {this.state.moviesWillWatch.length}</p>
+      </div>
+    </div>
     )
   }
 }
