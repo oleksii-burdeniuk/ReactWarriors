@@ -4,50 +4,66 @@ import cn from 'classnames'
 class Paginator extends React.Component {
     constructor() {
         super()
-        let pages = []
-        for (let i = 1; i <= 10; i++) {
-            pages.push(i)
-        }
         this.state = {
             pagesCount: 500,
-            portionSize: 9,
-            pages: pages,
+            leftPortion: 0,
+            rightPortion: 2,
+            pages: []
 
         }
     }
-    next = () => {
-        let nextPage;
-        if (this.props.page < this.state.pagesCount) {
-            nextPage = this.props.page + 1
+    componentDidMount() {
+        let pages = []
+        let leftPortionSize = this.props.page - 4;
+        let rightPortionSize = this.props.page + 4;
+        for (let i = 1; i <= this.state.pagesCount; i++) {
+            pages.push(i)
         }
-        else { nextPage = this.props.page }
-        this.props.switchPage(nextPage)
+        this.setState({
+            leftPortion: leftPortionSize,
+            rightPortion: rightPortionSize,
+            pages: pages
+        })
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.page !== prevProps.page) {
+            this.setState({
+                leftPortion: this.props.page - 4,
+                rightPortion: this.props.page + 4,
+            })
+        }
+    }
+
+    next = () => {
+        if (this.props.page < this.state.pagesCount)
+            this.props.switchPage(this.props.page + 1)
     }
     previous = () => {
-        let previousPage
         if (this.props.page > 1) {
-            previousPage = this.props.page - 1
+            this.props.switchPage(this.props.page - 1)
         }
-        else { previousPage = this.props.page }
-        this.props.switchPage(previousPage)
-    }
-    changePage = (page) => {
-        this.props.switchPage(page)
+
     }
     render() {
         return <div className='PageBtnCont'>
-            <div className={cn({ changePageBtn: this.props.page > 1 })} > <button type="button" onClick={this.previous} className={'activeChangePageBtn'}> previous page </button ></div>
-            <div> {this.state.pages.map(p => {
-                return (
-                    <span className={cn({ 'selected': p === this.props.page })} kay={p} onClick={(e) => {
-                        this.changePage(p)
-                    }}>
-                        {p}
-                    </span>
-                )
-            })}
+            <div className={cn({ 'changePageBtn': this.props.page > 1 })} >
+                <button type="button" onClick={this.previous} className={'activeChangePageBtn'}> previous page </button >
             </div>
-            <div className={cn({ changePageBtn: this.props.page < 500 })}> <button type="button" onClick={this.next} className={'activeChangePageBtn'} >next page </button></div>
+
+            {this.state.pages.filter(p => p >= this.state.leftPortion && p <= this.state.rightPortion)
+                .map((p) => {
+                    return <span onClick={() => { this.props.switchPage(p) }} className={cn({ 'selected': p === this.props.page })}>{p}</span>
+                })
+            }
+
+
+            {/* <p> {this.props.page}</p> */}
+
+
+
+            <div className={cn({ 'changePageBtn': this.props.page < 500 })}>
+                <button type="button" onClick={this.next} className={'activeChangePageBtn'} >next page </button>
+            </div>
         </div >
     }
 };
