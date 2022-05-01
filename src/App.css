@@ -60,7 +60,7 @@ width: 300px;
   color: blue;
 }
 .active{
-  background-color: burlywood;
+  background-color: rgb(40, 155, 37);
   height: 30px;
   border-radius: 3px;
 }
@@ -90,4 +90,17 @@ width: 300px;
 }
 .selected{
   background-color: rgb(40, 155, 37);
+  border-radius: 2px;
+}
+.notSelected{
+  background-color: darkkhaki;
+  border-radius: 3px;
+  border: none;
+}
+.paginatorItemCont{
+  display: flex;
+justify-content: space-around;
+width: 100%;
+margin: 5px;
+background-color: cornsilk;
 }

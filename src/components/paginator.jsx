@@ -74,11 +74,13 @@ class Paginator extends React.Component {
             <div className={cn({ 'changePageBtn': this.props.page > 1 })} >
                 <button type="button" onClick={this.previous} className={'activeChangePageBtn'}> previous page </button >
             </div>
-            {this.state.pages.filter(p => p >= this.state.leftPortion && p <= this.state.rightPortion)
-                .map((p) => {
-                    return <span onClick={() => { this.props.switchPage(p) }} className={cn({ 'selected': p === this.props.page })}>{p}</span>
-                })
-            }
+            <div className={'paginatorItemCont'}>
+                {this.state.pages.filter(p => p >= this.state.leftPortion && p <= this.state.rightPortion)
+                    .map((p) => {
+                        return <button key={p} onClick={() => { this.props.switchPage(p) }} className={cn({ 'selected': p === this.props.page }, { 'notSelected': p !== this.props.page })}>{p}</button>
+                    })
+                }
+            </div>
             <div className={cn({ 'changePageBtn': this.props.page < 500 })}>
                 <button type="button" onClick={this.next} className={'activeChangePageBtn'} >next page </button>
             </div>
