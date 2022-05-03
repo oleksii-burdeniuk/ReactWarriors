@@ -12,9 +12,9 @@ class MovieTabs extends React.Component {
     }
     render() {
         return <div className='sortBy'>
-            <div onClick={this.handleSortBy('popularity.desc')} className={this.getClassLink('popularity.desc')}> popularity desc</div >
-            <div onClick={this.handleSortBy('primary_release_date.desc')} className={this.getClassLink('primary_release_date.desc')} >primary_release_date desc</div>
-            <div onClick={this.handleSortBy('revenue.desc')} className={this.getClassLink('revenue.desc')} >revenue desc</div>
+            <button onClick={this.handleSortBy('popularity.desc')} className={this.getClassLink('popularity.desc')}> popularity desc</button >
+            <button onClick={this.handleSortBy('primary_release_date.desc')} className={this.getClassLink('primary_release_date.desc')} >primary_release_date desc</button>
+            <button onClick={this.handleSortBy('revenue.desc')} className={this.getClassLink('revenue.desc')} >revenue desc</button>
         </div >
     }
 }
