@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactWarriors/static/css/main.4daa8a30.css",
+    "main.js": "/ReactWarriors/static/js/main.09d1703b.js",
+    "static/js/787.28cb0dcd.chunk.js": "/ReactWarriors/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/ReactWarriors/index.html",
+    "main.4daa8a30.css.map": "/ReactWarriors/static/css/main.4daa8a30.css.map",
+    "main.09d1703b.js.map": "/ReactWarriors/static/js/main.09d1703b.js.map",
+    "787.28cb0dcd.chunk.js.map": "/ReactWarriors/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4daa8a30.css",
+    "static/js/main.09d1703b.js"
+  ]
+}
