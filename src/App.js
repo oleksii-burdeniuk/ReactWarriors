@@ -5,6 +5,7 @@ import MovieItem from './components/movieItem';
 import MovieTabs from './components/movieTabs';
 import Paginator from './components/paginator';
 import cn from 'classnames'
+import PaginatorFunctional from './functionalComponents/paginatorFunctional';
 
 
 
@@ -87,7 +88,7 @@ class App extends React.Component {
             )
           })}
         </div>
-        <div> <Paginator switchPage={this.switchPage} page={this.state.page} /></div>
+        <div> <PaginatorFunctional switchPage={this.switchPage} page={this.state.page} /></div>
       </div>
       <div className='willWatchContainer' >
         <p> will watch: {this.state.moviesWillWatch.length}</p>

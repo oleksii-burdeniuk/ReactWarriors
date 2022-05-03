@@ -55,6 +55,10 @@ width: 300px;
   width: 720px;
   justify-content: space-around;
   align-items: center;
+  background-color: rgba(175, 175, 175, 0.486);
+  border-radius: 5px;
+
+  
 }
 .sortBy :hover{
   color: blue;
@@ -93,9 +97,12 @@ width: 300px;
   border-radius: 2px;
 }
 .notSelected{
-  background-color: darkkhaki;
+  background-color: rgb(155, 155, 137);
   border-radius: 3px;
   border: none;
+}
+.notSelected :hover{
+  background-color: rgb(178, 224, 8);
 }
 .paginatorItemCont{
   display: flex;
