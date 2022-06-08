@@ -1,0 +1,128 @@
+ul{
+    padding-inline-start: 0px;
+}
+.header{
+    display: flex;
+    width: 100%;
+    height: 64px;
+    background-color: rgb(3,37,65);
+    justify-content: center;
+    align-items: center;
+
+
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.sub_media{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    padding: 40px;
+    justify-content: space-between;
+}
+.naw_wrapper{
+    display: flex;
+    width: 485.41px;
+    height: 40px;
+    align-items: center;
+}
+.flex{
+    display: flex;
+    width: 253.91px;
+    height: 40px;
+    align-items: center;
+
+}
+.logo{
+    color: white;
+    text-decoration: none;
+    height: 24px;
+    width: 154px;
+    border: 1px solid white;
+}
+.dropdown_menu {
+    text-decoration: none;
+    width: 315.41px;
+    display: flex;
+    align-items: center;
+}
+.k_item{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.k_link{
+    text-decoration: none;
+    color: white;
+}
+.primary{
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+.glyph_icon{
+    text-decoration: none;
+    display: flex;
+    color: white;
+    font-size: 30px;
+    height: 40px;
+    width: 22.4px;
+    justify-content: center;
+    align-items: center;
+}
+.primary li a{
+    text-decoration: none;
+}
+.translate{
+    display: flex;
+    margin-left: 30px;
+    color: white;
+    border: 1px solid white;
+    padding: 3px 5px 3px 5px;
+    width: 16px;
+    height: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    list-style: none outside none;
+}
+
+.gliph{
+    display: flex;
+    list-style: none outside none;
+    align-items: center;
+    justify-content: center;
+}
+.bell {
+    width: 22.4px;
+    height: 22.4px;
+    border: 1px solid white;
+    margin-left: 30px;
+    background-color: white;
+    border-radius: 3px;
+    list-style: none outside none;
+}
+.user{
+    width: 32px;
+    height: 32px;
+    margin-left: 30px;
+    background-color: rgba(65, 116, 255, 0.856);
+    border-radius: 50%;
+    list-style: none outside none;
+}
+.search_button{
+    width: 29px;
+    height: 29px;
+    margin-left: 30px;
+    list-style: none outside none;
+    border: 1px solid white;
+    border-radius: 3px;
+}

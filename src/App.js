@@ -6,7 +6,7 @@ import MovieTabs from './components/movieTabs';
 import Paginator from './components/paginator';
 import cn from 'classnames'
 import PaginatorFunctional from './functionalComponents/paginatorFunctional';
-
+import Header from './components/header/headerComponent';
 
 
 
@@ -75,6 +75,7 @@ class App extends React.Component {
 
   render() {
     return (<div className='headContainer'>
+      <Header />
       <div className='container'>
         <div> <Paginator switchPage={this.switchPage} page={this.state.page} /></div>
         <div>
