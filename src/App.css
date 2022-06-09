@@ -1,3 +1,4 @@
+
 .App {
   background-color: antiquewhite;
   display: flex;
@@ -6,6 +7,17 @@
   width: 90%;
   justify-content: space-around;
 
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .movieItem{
 border: 2px solid gray;

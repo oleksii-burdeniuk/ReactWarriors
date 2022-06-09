@@ -1,12 +1,13 @@
 import React from 'react';
 import { API_KEY, API_URL } from './api/api';
 import './App.css';
-import MovieItem from './components/movieItem';
+import MovieItem from './components/movies/movieItem/movieItem';
 import MovieTabs from './components/movieTabs';
 import Paginator from './components/paginator';
 import cn from 'classnames'
 import PaginatorFunctional from './functionalComponents/paginatorFunctional';
 import Header from './components/header/headerComponent';
+import Movies from './components/movies/movies';
 
 
 
@@ -76,24 +77,8 @@ class App extends React.Component {
   render() {
     return (<div className='headContainer'>
       <Header />
-      <div className='container'>
-        <div> <Paginator switchPage={this.switchPage} page={this.state.page} /></div>
-        <div>
-          <MovieTabs sort_by={this.state.sort_by} updateSortBy={this.updateSortBy} />
-        </div>
-        <div className='movieContainer'>
-          {this.state.movie.map((movie) => {
-            return (
-              <MovieItem key={movie.id} movie={movie} removeMovie={this.removeMovie}
-                addMovieToWillWatch={this.addMovieToWillWatch} removeMovieToWillWatch={this.removeMovieToWillWatch} />
-            )
-          })}
-        </div>
-        <div> <PaginatorFunctional switchPage={this.switchPage} page={this.state.page} /></div>
-      </div>
-      <div className='willWatchContainer' >
-        <p> will watch: {this.state.moviesWillWatch.length}</p>
-      </div>
+      <Movies movie={this.state.movie} removeMovie={this.removeMovie}
+        addMovieToWillWatch={this.addMovieToWillWatch} removeMovieToWillWatch={this.removeMovieToWillWatch} />
     </div>
     )
   }
