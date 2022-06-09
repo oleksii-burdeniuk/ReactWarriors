@@ -1,0 +1,42 @@
+.PageBtnCont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.changePageBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.changePageBtn :hover{
+    background-color: rgba(108, 125, 126, 0.288);
+  }
+  .activeChangePageBtn{
+    height: 35px;
+    width: 35px;
+    border: none;
+    border-radius: 5px;
+    border-radius: 50%;
+  }
+  .paginatorItemCont{
+    display: flex;
+    justify-content: space-around;
+    height: 35px;
+    margin: 5px;
+  }
+  .selected{
+    background-color: rgba(108, 125, 126, 0.288);
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+    width: 35px;
+  }
+  .notSelected {
+    border-radius: 3px;
+    border: none;
+    margin-left: 5px;
+    width: 35px;
+  }
+  .notSelected :hover{
+    background-color: rgb(178, 224, 8);
+  }

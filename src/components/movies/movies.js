@@ -1,6 +1,8 @@
 import React from "react";
+import Paginator from "../paginator";
 import MovieItem from "./movieItem/movieItem";
 import s from './movies.module.css'
+import PaginatorFunctional from "./paginator/paginatorFunctional";
 const Movies = (props) => {
     return (
         <section className={s.inner_container}>
@@ -24,6 +26,7 @@ const Movies = (props) => {
                             <div>
                                 <div className={s.white_column}>
                                     <section className={s.panel}>
+                                        <div className={s.paginator}> <PaginatorFunctional switchPage={props.switchPage} page={props.page} /></div>
                                         <div className={s.media_items}>
                                             <div className={s.page_wrapper}>
                                                 {props.movie.map((movie) => {

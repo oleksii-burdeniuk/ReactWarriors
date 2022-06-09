@@ -40,3 +40,21 @@ div.image img {
     width: 100%;
     height: 100%;
 }
+div.content h2 {
+    display: block;
+    font-size: 1em;
+    margin: 0;
+    width: 100%;
+    overflow-wrap: break-word;
+    font-weight: 600;
+    padding: 0;
+    box-sizing: border-box;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+div.content a {
+    font-weight: 700;
+    color: #000;
+}

@@ -162,3 +162,8 @@ div.page_wrapper {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.paginator{
+    margin: 0px 10px 20px 10px;
+    border-radius: 8px;
+
+}

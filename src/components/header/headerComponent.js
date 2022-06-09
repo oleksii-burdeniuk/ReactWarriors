@@ -6,7 +6,7 @@ const Header = (props) => {
         <div className={s.content}>
             <div className={s.sub_media}>
                 <div className={s.naw_wrapper}>
-                    <a href="#" className={s.logo} >LOGO</a>
+                    <a href="https://www.instagram.com/olekssiy/" className={s.logo} >Made by Oleksii</a>
                     <ul className={s.dropdown_menu}>
                         <li className={s.k_item}>
                             <a href="#" className={s.k_link}>Movies</a>

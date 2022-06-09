@@ -5,7 +5,7 @@ import MovieItem from './components/movies/movieItem/movieItem';
 import MovieTabs from './components/movieTabs';
 import Paginator from './components/paginator';
 import cn from 'classnames'
-import PaginatorFunctional from './functionalComponents/paginatorFunctional';
+import PaginatorFunctional from './components/movies/paginator/paginatorFunctional';
 import Header from './components/header/headerComponent';
 import Movies from './components/movies/movies';
 
@@ -78,7 +78,7 @@ class App extends React.Component {
     return (<div className='headContainer'>
       <Header />
       <Movies movie={this.state.movie} removeMovie={this.removeMovie}
-        addMovieToWillWatch={this.addMovieToWillWatch} removeMovieToWillWatch={this.removeMovieToWillWatch} />
+        addMovieToWillWatch={this.addMovieToWillWatch} removeMovieToWillWatch={this.removeMovieToWillWatch} switchPage={this.switchPage} page={this.state.page} />
     </div>
     )
   }
