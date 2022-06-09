@@ -1,3 +1,4 @@
+
 ul{
     padding-inline-start: 0px;
 }
@@ -129,4 +130,85 @@ ul{
     list-style: none outside none;
     border: 1px solid white;
     border-radius: 3px;
+}
+.k_animation_container{
+    border-radius: 0.25rem;
+    border: 1px solid;
+    width: 173.078px;
+    height: 128px;
+    overflow: visible;
+    z-index: 10002;
+    box-sizing: content-box;
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+    color: #000;
+    font-weight: 400;
+    cursor: default;
+    border-color: #dee2e6;
+    background-color: #f8f9fa;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    font: inherit;
+    list-style: none;
+}
+.k_animation_container :hover {
+    visibility: visible;
+}
+.k_menu_item{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5;
+    outline: 0;
+    border-width: 0;
+    flex: 0 0 auto;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 400;
+}
+.k_menu_link{
+    padding: 3px 0px;
+    outline: 0;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+    justify-content: center;
+}
+.movies {
+    top: 50px;
+    left: 200px;
+    visibility: visible;
+}
+.tv_shows{
+    top: 50px;
+    left: 270px;
+    visibility: visible;
+}
+.people{
+    top: 50px;
+    left: 360px;
+    visibility: visible;
+    height: 35px;
+}
+.more{
+    top: 50px;
+    left: 450px;
+    visibility: visible;
 }

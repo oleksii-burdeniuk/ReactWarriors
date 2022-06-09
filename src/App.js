@@ -20,6 +20,7 @@ class App extends React.Component {
       sort_by: 'popularity.desc',
       page: 1,
       adult: false,
+      watch: 'tv'
     }
   }
   removeMovie = (movie) => {
@@ -30,8 +31,14 @@ class App extends React.Component {
       movie: updateMovies
     })
   }
+  setWhatToWath = (item) => {
+
+    this.setState({
+      watch: item
+    })
+  }
   getMovies = () => {
-    fetch(`${API_URL}/discover/movie?api_key=${API_KEY}&sort_by=${this.state.sort_by}&page=${this.state.page}&include_adult=${this.state.adult}`).then((response) => {
+    fetch(`${API_URL}/discover/${this.state.watch}?api_key=${API_KEY}&sort_by=${this.state.sort_by}&page=${this.state.page}&include_adult=${this.state.adult}`).then((response) => {
       return response.json()
     }).then((data) => {
       this.setState({
@@ -44,7 +51,7 @@ class App extends React.Component {
     this.getMovies()
   }
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.sort_by !== prevState.sort_by || this.state.page !== prevState.page) {
+    if (this.state !== prevState || this.state.page !== prevState.page) {
       this.getMovies()
     }
   }
@@ -76,7 +83,7 @@ class App extends React.Component {
 
   render() {
     return (<div className='headContainer'>
-      <Header />
+      <Header setWhatToWath={this.setWhatToWath} watch={this.state.watch} updateSortBy={this.updateSortBy} />
       <Movies movie={this.state.movie} removeMovie={this.removeMovie}
         addMovieToWillWatch={this.addMovieToWillWatch} removeMovieToWillWatch={this.removeMovieToWillWatch} switchPage={this.switchPage} page={this.state.page} />
     </div>
