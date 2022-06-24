@@ -28,7 +28,7 @@ class MovieItem extends React.Component {
         })
     }
     render() {
-        let image = this.props.movie.backdrop_path ? this.props.movie.backdrop_path : this.props.movie.poster_path
+        let image = this.props.movie.poster_path ? this.props.movie.poster_path : this.props.movie.backdrop_path
         let title = this.props.movie.original_title
         let vote_average = this.props.movie.vote_average
         let overviev = this.props.movie.overview

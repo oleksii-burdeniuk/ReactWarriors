@@ -96,6 +96,181 @@ div.filter_panel {
     padding-left: 20px;
     margin-top: 10px;
 }
+div.filter_panel h2, div.media.discover div.filter_panel h3 {
+    margin: 0;
+    padding: 0;
+}
+div.name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 14px 16px;
+}
+span.chevron_right {
+    transform: rotate(90deg);
+    background-image: url(https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-224-chevron-right-d1f88a6c15e68190c3b47e1ee4f39fe47f4b69f4966ca7c250c2e14cfa689a04.svg);
+}
+.card {
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border: 1px solid rgba(var(--lightGrey), 1);
+    background-color: #fff;
+}
+div.filter_panel.closed div.name span.chevron_right {
+    transform: rotate(0);
+}
+div.filter_panel div.filter {
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding: 14px 16px 16px 16px;
+}
+div.filter_panel div.filter h3 {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+div.media.discover .font_size_1, div.media.discover .font_size_1 ul li {
+    font-size: 0.9em;
+}
+div.media.discover .full_width {
+    width: 100%;
+}
+.k_widget, .k_textbox, .k_textarea, .k_button {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 1em;
+}
+.k_dropdown, .k_dropdowntree {
+    width: 12.4em;
+    border-width: 0;
+    outline: 0;
+    background: 0 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    white-space: nowrap;
+    display: inline-flex;
+    vertical-align: middle;
+    position: relative;
+}
+.k_dropdown .k_dropdown-wrap, .k_dropdowntree .k_dropdown-wrap {
+    border-color: #e4e7eb;
+    color: #212529;
+    background-color: #e4e7eb;
+}
+.k_dropdown .k_dropdown-wrap, .k_dropdowntree .k_dropdown_wrap {
+    transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out,box-shadow .2s ease-in-out;
+}
+.k_dropdown .k_dropdown-wrap, .k_dropdowntree .k_dropdown_wrap {
+    border-radius: 0.25rem;
+    padding: 0;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    position: relative;
+    transition: all .1s ease;
+    cursor: pointer;
+    outline: 0;
+}
+.k-input {
+    margin: 0;
+    padding: 0.375rem 0.75rem;
+    width: 100%;
+    min-width: 0;
+    height: calc(1.5em + 0.75rem);
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+    color: inherit;
+    background: 0 0;
+    font: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.k-icon {
+    width: 1em;
+    height: 1em;
+    outline: 0;
+    font-size: 16px;
+    font-family: WebComponentsIcons;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    text-decoration: none;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+.k_dropdown .k_dropdown-wrap .k_select, .k_dropdowntree .k_dropdown-wrap .k_select {
+    border-radius: 0 0.25rem 0.25rem 0;
+    padding: 0.375rem 0.375rem;
+    border-width: 0;
+    box-sizing: border-box;
+    border-style: solid;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+div.filter_panel h2, div.media.discover div.filter_panel h3 {
+    margin: 0;
+    padding: 0;
+}
+.glyphicons_v2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1em;
+    min-height: 1em;
+    width: 1em;
+    height: 1em;
+    line-height: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: inherit;
+    box-sizing: border-box;
+}
+div.name h2 {
+    font-size: 1.1em;
+}
 div.apply {
     width: 100%;
     margin-top: 20px;

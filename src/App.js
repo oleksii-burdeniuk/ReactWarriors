@@ -20,8 +20,14 @@ class App extends React.Component {
       sort_by: 'popularity.desc',
       page: 1,
       adult: false,
-      watch: 'tv'
+      watch: 'movie',
+      whatIsShowing: 'Popular Movies',
     }
+  }
+  switchIsShowingInfo = (I) => {
+    this.setState({
+      whatIsShowing: I
+    })
   }
   removeMovie = (movie) => {
     let updateMovies = this.state.movie.filter((item) => {
@@ -38,7 +44,7 @@ class App extends React.Component {
     })
   }
   getMovies = () => {
-    fetch(`${API_URL}/discover/${this.state.watch}?api_key=${API_KEY}&sort_by=${this.state.sort_by}&page=${this.state.page}&include_adult=${this.state.adult}`).then((response) => {
+    fetch(`${API_URL}/discover/${this.state.watch}?primary_release_date.gte=2014-09-15&api_key=${API_KEY}&sort_by=${this.state.sort_by}&page=${this.state.page}&include_adult=${this.state.adult}`).then((response) => {
       return response.json()
     }).then((data) => {
       this.setState({
@@ -83,9 +89,13 @@ class App extends React.Component {
 
   render() {
     return (<div className='headContainer'>
-      <Header setWhatToWath={this.setWhatToWath} watch={this.state.watch} updateSortBy={this.updateSortBy} />
+      <Header setWhatToWath={this.setWhatToWath} watch={this.state.watch} updateSortBy={this.updateSortBy} switchIsShowingInfo={this.switchIsShowingInfo} />
       <Movies movie={this.state.movie} removeMovie={this.removeMovie}
-        addMovieToWillWatch={this.addMovieToWillWatch} removeMovieToWillWatch={this.removeMovieToWillWatch} switchPage={this.switchPage} page={this.state.page} />
+        addMovieToWillWatch={this.addMovieToWillWatch}
+        removeMovieToWillWatch={this.removeMovieToWillWatch}
+        switchPage={this.switchPage} page={this.state.page}
+        whatIsShowing={this.state.whatIsShowing}
+      />
     </div>
     )
   }

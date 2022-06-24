@@ -24,6 +24,7 @@ const Header = (props) => {
         setMoreVisibility(I)
     }
 
+
     return <div className={s.header}>
         <div className={s.content}>
             <div className={s.sub_media}>
@@ -31,41 +32,49 @@ const Header = (props) => {
                     <a href="https://www.linkedin.com/in/oleksii-burdeniuk-9b1b6a22b" className={s.logo} >Made by Oleksii</a>
                     <ul className={s.dropdown_menu}>
                         <li onMouseLeave={(event) => { setMovieInfoVis(false) }} onMouseOver={(event) => { setMovieInfoVis(true) }} className={s.k_item}>
-                            <a onClick={() => { props.setWhatToWath('movie') }} href="#" className={s.k_link}>
+                            <a href="#" className={s.k_link}>
                                 <span>Movies</span></a>
                             <div className={cn([s.k_animation_container], { [s.movies]: moviesVisibility })}>
                                 <ul>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('popular') }} className={s.k_menu_link} href="#">Popular</a>
+                                        <a onClick={() => { props.updateSortBy('popular'); props.switchIsShowingInfo('Popular Movies'); props.setWhatToWath('movie') }}
+                                            className={s.k_menu_link} href="#">Popular</a>
                                     </li>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('now_playing') }} className={s.k_menu_link} href="#">Now Playing</a>
+                                        <a onClick={() => { props.updateSortBy('now_playing'); props.switchIsShowingInfo('Now Playing Movies'); props.setWhatToWath('movie') }}
+                                            className={s.k_menu_link} href="#">Now Playing</a>
                                     </li>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('upcoming') }} className={s.k_menu_link} href="#">Upcoming</a>
+                                        <a onClick={() => { props.updateSortBy('upcoming'); props.switchIsShowingInfo('Upcoming Movies'); props.setWhatToWath('movie') }}
+                                            className={s.k_menu_link} href="#">Upcoming</a>
                                     </li>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('top_rated') }} className={s.k_menu_link} href="#">Top Rated</a>
+                                        <a onClick={() => { props.updateSortBy('top_rated'); props.switchIsShowingInfo('Top Rated Movies'); props.setWhatToWath('movie') }}
+                                            className={s.k_menu_link} href="#">Top Rated</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li onMouseLeave={(event) => { setTvShowInfoVis(false) }} onMouseOver={(event) => { setTvShowInfoVis(true) }} className={s.k_item}>
-                            <a onClick={() => { props.setWhatToWath('tv') }} href="#" className={cn([s.k_link])}>
+                            <a href="#" className={cn([s.k_link])}>
                                 <span>TV Shows</span></a>
                             <div className={cn([s.k_animation_container], { [s.tv_shows]: tvShowVisibility })}>
                                 <ul>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('popular') }} className={s.k_menu_link} href="#">Popular</a>
+                                        <a onClick={() => { props.updateSortBy('popular'); props.switchIsShowingInfo('Popular TV Shows'); props.setWhatToWath('tv') }}
+                                            className={s.k_menu_link} href="#">Popular</a>
                                     </li>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('airing_today') }} className={s.k_menu_link} href="#">Airing Today</a>
+                                        <a onClick={() => { props.updateSortBy('airing_today'); props.switchIsShowingInfo('TV Shows Airing Today'); props.setWhatToWath('tv') }}
+                                            className={s.k_menu_link} href="#">Airing Today</a>
                                     </li>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('on_the_air') }} className={s.k_menu_link} href="#">On TV</a>
+                                        <a onClick={() => { props.updateSortBy('on_the_air'); props.switchIsShowingInfo('Currently Airing TV Shows'); props.setWhatToWath('tv') }}
+                                            className={s.k_menu_link} href="#">On TV</a>
                                     </li>
                                     <li className={s.k_menu_item}>
-                                        <a onClick={() => { props.updateSortBy('top_rated') }} className={s.k_menu_link} href="#">Top Rated</a>
+                                        <a onClick={() => { props.updateSortBy('top_rated'); props.switchIsShowingInfo('Top Rated TV Shows'); props.setWhatToWath('tv') }}
+                                            className={s.k_menu_link} href="#">Top Rated</a>
                                     </li>
                                 </ul>
                             </div>
