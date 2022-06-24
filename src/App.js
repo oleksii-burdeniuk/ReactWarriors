@@ -22,6 +22,7 @@ class App extends React.Component {
       adult: false,
       watch: 'movie',
       whatIsShowing: 'Popular Movies',
+      
     }
   }
   switchIsShowingInfo = (I) => {

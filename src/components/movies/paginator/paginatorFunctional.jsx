@@ -6,14 +6,36 @@ const PaginatorFunctional = (props) => {
     let [pagesCount, setPagesCount] = useState(500);
     let [leftPortion, setLeftPortion] = useState(props.page);
     let [rightPortion, setRightPortion] = useState(props.page + 7);
+    let [screenWidth, setScreenWidth] = useState(200);
     let page = []
     for (let i = 1; i <= pagesCount; i++) {
         page.push(i)
     }
     let [pages, setPages] = useState(page)
 
+    function getWindowDimensions() {
+        const { innerWidth: width, innerHeight: height } = window;
+        return {
+          width,
+          height
+        };
+      }
+      useEffect(()=>{
+        let x = getWindowDimensions();
+        setScreenWidth(x)
+      },[])
+
     useEffect(() => {
-        if (props.page === 1) {
+       let {width} =getWindowDimensions();
+       setScreenWidth(width)
+        if (screenWidth <= 850 && props.page === 1) {
+            setLeftPortion(props.page - 1);
+            setRightPortion(props.page + 2);
+          }else if( screenWidth <= 850 ){
+            setLeftPortion(props.page - 1);
+            setRightPortion(props.page + 1);
+          }
+        else if (props.page === 1) {
             setLeftPortion(props.page);
             setRightPortion(props.page + 8);
         }
