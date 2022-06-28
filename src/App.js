@@ -57,8 +57,10 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
       alert('phone')
+    } else if (/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+
     } else {
       alert('laptop')
   }
