@@ -1,9 +1,9 @@
 {
-  "short_name": "Oleksii APP",
-  "name": "Oleksii burdeniuk site",
+  "short_name": "Oleksii's APP",
+  "name": "Oleksii's burdeniuk site",
   "icons": [
     {
-      "src": "boldMan.png",
+      "src": "boldMan4.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
     },

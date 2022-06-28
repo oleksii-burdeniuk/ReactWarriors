@@ -53,12 +53,20 @@ class App extends React.Component {
       })
     })
   }
+  
 
   componentDidMount() {
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      alert('phone')
+    } else {
+      alert('laptop')
+  }
+
     this.getMovies()
   }
   componentDidUpdate(prevProps, prevState) {
-    if (this.state !== prevState || this.state.page !== prevState.page) {
+    if (this.state !== prevState && this.state.page !== prevState.page) {
       this.getMovies()
     }
   }

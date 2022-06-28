@@ -85,7 +85,7 @@ div.filter_panel {
     width: 260px;
     border: 1px solid #e3e3e3;
     border-radius: 8px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
     overflow: hidden;
@@ -305,7 +305,7 @@ div.apply a {
 }
 div.white_column {
     background-color: #fff;
-    width: calc(100vw - 80px - 268px);
+    width: 100%;
     max-width: calc(1400px - 80px - 268px);
     display: flex;
     flex-wrap: wrap;
